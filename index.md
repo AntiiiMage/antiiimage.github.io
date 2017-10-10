@@ -1,4 +1,4 @@
-## Welcome to my blog
+## Welcome to my blog, Hope this is helpful
 
 ### 2017-Oct
 [Understand Java HashMap](https://github.com/AntiiiMage/antiiimage.github.io/pages/HashMap)

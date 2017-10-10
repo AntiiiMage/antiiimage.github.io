@@ -52,7 +52,7 @@ static class Node<K,V> implements Map.Entry<K,V> {
                     }
                     if (e.hash == hash &&
                         ((k = e.key) == key || (key != null && key.equals(k))))
-                        break; // if current node's key matched with target, break
+                        break; // if existing node's key matched with target, break
                     p = e; //move to next node
                 }
             }
@@ -65,13 +65,13 @@ static class Node<K,V> implements Map.Entry<K,V> {
             }
         }
         ++modCount; //increment the number of structural modification
-        if (++size > threshold) //increment map element size and compare with threshold
-            resize(); // resize if execeed threshold
+        if (++size > threshold) //Increment map element size and compare with threshold
+            resize(); // Resize if execeed threshold
         afterNodeInsertion(evict);
         return null;
     }
 ```
-## How get works
+## How Get() works
 ```java
     /**
      * Implements Map.get and related methods
@@ -83,18 +83,18 @@ static class Node<K,V> implements Map.Entry<K,V> {
     final Node<K,V> getNode(int hash, Object key) {
         Node<K,V>[] tab; Node<K,V> first, e; int n; K k;
         if ((tab = table) != null && (n = tab.length) > 0 &&
-            (first = tab[(n - 1) & hash]) != null) {
-            if (first.hash == hash && // always check first node
+            (first = tab[(n - 1) & hash]) != null) {//Find first node at index (n-1) & hash
+            if (first.hash == hash && // Always check first node
                 ((k = first.key) == key || (key != null && key.equals(k))))
-                return first;
+                return first; //Return exist node if first node matched
             if ((e = first.next) != null) {
                 if (first instanceof TreeNode)
-                    return ((TreeNode<K,V>)first).getTreeNode(hash, key);
+                    return ((TreeNode<K,V>)first).getTreeNode(hash, key);//Find existing node in tree, null if no matching
                 do {
                     if (e.hash == hash &&
                         ((k = e.key) == key || (key != null && key.equals(k))))
-                        return e;
-                } while ((e = e.next) != null);
+                        return e; // Find matched existing node
+                } while ((e = e.next) != null); // Traverse the linked list
             }
         }
         return null;

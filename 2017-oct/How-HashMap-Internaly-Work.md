@@ -64,9 +64,9 @@ static class Node<K,V> implements Map.Entry<K,V> {
                 return oldValue;
             }
         }
-        ++modCount;
-        if (++size > threshold)
-            resize();
+        ++modCount; //increment the number of structural modification
+        if (++size > threshold) //increment map element size and compare with threshold
+            resize(); // resize if execeed threshold
         afterNodeInsertion(evict);
         return null;
     }

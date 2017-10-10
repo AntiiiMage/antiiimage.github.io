@@ -1,11 +1,11 @@
-##First take a look at HashMap
+## First take a look at HashMap
 ```java
 /**
 * The table, resized as necessary. Length MUST Always be a power of two.
 */
 transient HashMap.Node<K, V>[] table;
 ```
-##What is Node
+## What is Node
 ```java
 final int hash;
         final K key;

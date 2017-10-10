@@ -1,4 +1,7 @@
-## Welcome to GitHub Pages
+## Welcome to my blog
+
+### 2017-Oct
+[Understand Java HashMap](https://github.com/AntiiiMage/antiiimage.github.io/pages/HashMap)
 
 You can use the [editor on GitHub](https://github.com/AntiiiMage/antiiimage.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 

@@ -5,6 +5,21 @@ HashMap stores the Node instances in an array and not as key-value pairs
 * The table, resized as necessary. Length MUST Always be a power of two.
 */
 transient HashMap.Node<K, V>[] table;
+transient int size; //The number of key-value mappings contained in this map.
+// The number of times this HashMap has been structurally modified, is used to make iterators on Collection-views 
+//of the HashMap fail-fasttransient int modCount; 
+int threshold; //The next size value at which to resize (capacity * load factor).
+final float loadFactor;
+static final float DEFAULT_LOAD_FACTOR = 0.75F;
+/**
+* The bin count threshold for using a tree rather than list for a
+* bin.  Bins are converted to trees when adding an element to a
+* bin with at least this many nodes. The value must be greater
+* than 2 and should be at least 8 to mesh with assumptions in
+* tree removal about conversion back to plain bins upon
+* shrinkage.
+*/
+static final int TREEIFY_THRESHOLD = 8;
 ```
 ## What is Node
 ```java

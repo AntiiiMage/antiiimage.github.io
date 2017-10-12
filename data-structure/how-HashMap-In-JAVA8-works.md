@@ -1,13 +1,13 @@
 ## First take a look at HashMap
 HashMap stores the Node instances in an array and not as key-value pairs
 ```java
-/**
-* The table, resized as necessary. Length MUST Always be a power of two.
-*/
-transient HashMap.Node<K, V>[] table;
+transient HashMap.Node<K, V>[] table; //The table, resized as necessary. Length MUST Always be a power of two.
 transient int size; //The number of key-value mappings contained in this map.
-// The number of times this HashMap has been structurally modified, is used to make iterators on Collection-views 
-//of the HashMap fail-fasttransient int modCount; 
+/**
+* The number of times this HashMap has been structurally modified, is used to make iterators on Collection-views
+* of the HashMap fail-fast
+*/
+transient int modCount; 
 int threshold; //The next size value at which to resize (capacity * load factor).
 final float loadFactor;
 static final float DEFAULT_LOAD_FACTOR = 0.75F;
